@@ -25,7 +25,7 @@ const CheckoutForm = forwardRef(({ onClearCart, cartItems }, ref) => {
         })),
       };
 
-      const response = await fetch('http://localhost:3000/orders', {
+      const response = await fetch('https://food-order-backend-u5gp.onrender.com/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
