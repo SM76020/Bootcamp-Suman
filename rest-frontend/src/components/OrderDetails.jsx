@@ -9,7 +9,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchPendingOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/orders/pending');
+        const response = await axios.get('https://food-order-backend-u5gp.onrender.com/orders/pending');
         setOrders(response.data);
       } catch (error) {
         console.error('Failed to fetch pending orders:', error);
@@ -23,7 +23,7 @@ const OrderDetails = () => {
 
   const handleAccept = async (orderId) => {
     try {
-      await axios.post(`http://localhost:3000/orders/${orderId}/accept`);
+      await axios.post(`https://food-order-backend-u5gp.onrender.com/orders/${orderId}/accept`);
       setSelectedOrder(null); // Close modal
       // Refresh the orders
       setOrders(orders.filter(order => order.id !== orderId));
@@ -35,7 +35,7 @@ const OrderDetails = () => {
 
   const handleReject = async (orderId) => {
     try {
-      await axios.post(`http://localhost:3000/orders/${orderId}/reject`);
+      await axios.post(`https://food-order-backend-u5gp.onrender.com/orders/${orderId}/reject`);
       setSelectedOrder(null); // Close modal
       // Refresh the orders
       setOrders(orders.filter(order => order.id !== orderId));
