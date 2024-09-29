@@ -7,7 +7,7 @@ const FoodList = ({ onAddToCart }) => {
     useEffect(() => {
         const fetchMeals = async () => {
             try {
-                const response = await fetch('http://localhost:3000/meals'); // Adjust the URL if your server runs on a different port
+                const response = await fetch('https://food-order-backend-u5gp.onrender.com/meals'); // Adjust the URL if your server runs on a different port
                 if (!response.ok) {
                     throw new Error('Failed to fetch meals');
                 }
